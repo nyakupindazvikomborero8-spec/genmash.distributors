@@ -2,108 +2,156 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Home | Genmash distributors</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<meta name="description" content="Genmash distributors supplies and installs solar systems, Starlink, WiFi extenders and electric tubing in Kadoma.">
+<meta name="theme-color" content="#3b58a8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="genmash.css">
+<script src="site.js"></script>
 </head>
 <body>
-<header><div class="wrap"><a class="logo" href="genmash-website.html">Genmash distributors</a>
-<nav>
-<a class="on" href="genmash-website.html">Home</a>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="genmash-website.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 2 4.5 13.5h6L9.5 22l10-12.5h-6.2z"/></svg><span>Genmash <small>distributors</small></span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main">
+<a href="genmash-website.html" aria-current="page">Home</a>
 <a href="starlink.html">Starlink</a>
 <a href="solar.html">Solar</a>
 <a href="wifi.html">WiFi</a>
 <a href="electric.html">Electric</a>
 <a href="dashboard.html">Dashboard</a>
 <a href="contact.html">Contact</a>
-</nav></div></header>
-<main id="top">
-<div class="band"><div class="wrap hero">
+</nav>
+</div></header>
+<main>
+<section class="hero">
+<div class="wrap hero-grid">
+<div class="hero-main">
 <h1>Power and internet, fixed and supplied.</h1>
 <p>We supply the equipment and install it: solar systems, Starlink and WiFi extenders, access point configuration and electric tubing, plus health checks for solar systems. One team, one quote, done properly.</p>
-<a class="btn" href="#dashboard">Request a quote</a><a class="btn alt" href="#services">See services</a>
-</div></div>
-
-<section id="services"><div class="wrap">
-<h2>What we fix and supply</h2><p class="sub">Every job includes the equipment, the installation and a working handover.</p>
-<div class="grid" id="svcGrid">
-<div class="card" style="--c:var(--sun)"><h3>Solar installation</h3><p>Panels, inverters and batteries sized for your home or business.</p><p style="margin-top:16px"><a class="more" href="solar.html">View details &rarr;</a></p></div>
-<div class="card" style="--c:var(--sky)"><h3>Starlink installation</h3><p>Kit supply, mounting and setup so you get a stable connection.</p><p style="margin-top:16px"><a class="more" href="starlink.html">View details &rarr;</a></p></div>
-<div class="card" style="--c:#0a2a78"><h3>Solar health check</h3><p>We inspect your existing solar system and fix faults so it keeps performing.</p><p style="margin-top:16px"><a class="more" href="solar.html">View details &rarr;</a></p></div>
-<div class="card" style="--c:#0891b2"><h3>WiFi extenders and access points</h3><p>Extender supply and setup, plus access point configuration, to remove dead spots in your home or office.</p><p style="margin-top:16px"><a class="more" href="wifi.html">View details &rarr;</a></p></div>
-<div class="card" style="--c:#4f46e5"><h3>Electric tubing</h3><p>Conduit and tubing supplied and fitted so your electrical wiring is neat and protected.</p><p style="margin-top:16px"><a class="more" href="electric.html">View details &rarr;</a></p></div>
+<div class="actions"><a class="btn" href="#quote">Request a quote</a><a class="btn btn-quiet" href="#services">See services</a></div>
 </div>
-<div class="pager"><button class="btn" id="prev" type="button">Previous</button><span id="pg"></span><button class="btn" id="next" type="button">Next</button></div>
+<svg class="sun" viewBox="0 0 400 400" role="img" aria-label="Sun with signal rings">
+<defs><radialGradient id="sg" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#fff3bf"/><stop offset=".4" stop-color="#ffc933"/><stop offset="1" stop-color="#ee8200"/></radialGradient>
+<radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<radialGradient id="bl" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".5" stop-color="#9db8ff"/><stop offset="1" stop-color="#2f55c4"/></radialGradient>
+<pattern id="dt" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#2f55c4"/></pattern></defs>
+<rect x="20" y="250" width="98" height="98" fill="url(#dt)" opacity=".6"/>
+<g fill="none" stroke="#2f55c4" stroke-width="3"><circle cx="210" cy="190" r="128" opacity=".6"/><circle cx="210" cy="190" r="164" opacity=".38"/><circle cx="210" cy="190" r="198" opacity=".2"/></g>
+<path d="M30 60q12-16 24 0t24 0 24 0 24 0" fill="none" stroke="#2f55c4" stroke-width="3" stroke-linecap="round"/>
+<circle cx="210" cy="190" r="92" fill="url(#sg)"/>
+<ellipse cx="178" cy="150" rx="40" ry="26" transform="rotate(-35 178 150)" fill="url(#gl)"/>
+<circle cx="92" cy="300" r="26" fill="url(#bl)"/><ellipse cx="84" cy="291" rx="9" ry="6" fill="#fff" opacity=".8"/>
+<circle cx="330" cy="330" r="12" fill="url(#bl)"/>
+</svg>
+</div>
+<div class="wrap"><ul class="steps">
+<li><strong>Supply</strong><span>Equipment for solar, Starlink, WiFi and wiring, on one quote.</span></li>
+<li><strong>Install</strong><span>Our team fits it, from mounting and cabling to configuration.</span></li>
+<li><strong>Hand over</strong><span>Tested and working before we leave.</span></li>
+</ul></div>
+</section>
+
+<section class="section" id="services"><div class="wrap">
+<div class="section-head"><h2>What we fix and supply</h2><p class="lead">Pick a service to see what is included.</p></div>
+<ul class="svc">
+<li><a href="solar.html"><h3>Solar installation</h3><p>Panels, inverters and batteries sized for your home or business.</p><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></a></li>
+<li><a href="starlink.html"><h3>Starlink installation</h3><p>Kit supply, mounting and setup so you get a stable connection.</p><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></a></li>
+<li><a href="solar.html#health-check"><h3>Solar health check</h3><p>We inspect your existing solar system and fix faults so it keeps performing.</p><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></a></li>
+<li><a href="wifi.html"><h3>WiFi extenders and access points</h3><p>Extender supply and setup, plus access point configuration, to remove dead spots in your home or office.</p><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></a></li>
+<li><a href="electric.html"><h3>Electric tubing</h3><p>Conduit and tubing supplied and fitted so your electrical wiring is neat and protected.</p><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></a></li>
+</ul>
 </div></section>
 
-<section><div class="wrap"><h2>Photos</h2><div class="shots"><img class="photo" src="images/solar-inverter.jpg" alt="A technician wiring a solar inverter on a wall" loading="lazy"><img class="photo" src="images/starlink-roof.jpg" alt="A Starlink dish mounted on a roof" loading="lazy"><img class="photo" src="images/electric-board.jpg" alt="Wiring on an electrical distribution board" loading="lazy"><img class="photo" src="images/wifi-extender.jpg" alt="A WiFi extender" loading="lazy"></div></div></section>
+<section class="section section--soft"><div class="wrap">
+<div class="section-head"><h2>Equipment and installs</h2></div>
+<div class="photos">
+<figure><img src="images/solar-inverter.jpg" alt="A technician wiring a solar inverter on a wall" width="1000" height="768" loading="lazy"><figcaption>Solar inverter wiring</figcaption></figure>
+<figure><img src="images/starlink-roof.jpg" alt="A Starlink dish mounted on a roof" width="762" height="429" loading="lazy"><figcaption>Starlink dish on a roof</figcaption></figure>
+<figure><img src="images/electric-board.jpg" alt="Wiring on an electrical distribution board" width="400" height="392" loading="lazy"><figcaption>Distribution board</figcaption></figure>
+<figure><img src="images/wifi-extender.jpg" alt="A WiFi extender" width="447" height="447" loading="lazy"><figcaption>WiFi extender</figcaption></figure>
+</div>
+</div></section>
 
-<section id="dashboard"><div class="wrap">
-<h2>Service dashboard</h2><p class="sub">Choose a service to see what is included, then send a request.</p>
-<div class="dash" id="dash">
-<div class="tabs" role="tablist" id="tabs"></div>
-<div class="panel" id="panel"></div>
-<form id="form">
-<input id="name" placeholder="Your name" required autocomplete="name">
-<input id="phone" placeholder="Phone number" required inputmode="tel" autocomplete="tel">
-<select id="svc" aria-label="Service"></select>
+<section class="section" id="quote"><div class="wrap">
+<div class="section-head"><h2>Request a quote</h2><p class="lead">Choose a service to see what is included, then send your details on WhatsApp.</p></div>
+<div class="quote">
+<div>
+<div class="tabs" id="tabs" role="group" aria-label="Services"></div>
+<div class="panel" id="panel" aria-live="polite"></div>
+</div>
+<div>
+<form class="card" id="form">
+<div class="field"><label for="name">Your name</label><input id="name" required autocomplete="name"></div>
+<div class="field"><label for="phone">Phone number</label><input id="phone" required inputmode="tel" autocomplete="tel"></div>
+<div class="field"><label for="svc">Service</label><select id="svc"></select></div>
 <button class="btn" type="submit">Send on WhatsApp</button>
+<div class="note" id="waNote" hidden></div>
 </form>
-<p class="empty" id="empty">No requests yet. Requests you send appear here.</p>
-<ul id="list"></ul>
-<p class="empty" id="waNote" style="display:none"></p>
-</div></div></section>
+<p class="empty" id="empty">Requests you send from this device will be listed here.</p>
+<ul class="sent" id="list"></ul>
+</div>
+</div>
+</div></section>
 
-<section id="contact"><div class="wrap">
+<section class="section section--soft" id="contact"><div class="wrap split">
+<div>
 <h2>Contact us</h2>
-<p class="sub">Phone (quotes and WhatsApp): +263 71 875 1792<br>Also: 0786077652, 0775204255<br>Email: sales@genmashy.co.zw or nyakupindazvikomborero8@gmail.com<br>Address: Patchway, Kadoma</p>
-<p><a class="btn" href="https://wa.me/263718751792?text=Hello%20Genmash%20distributors" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+<p class="lead">Call, email or message us on WhatsApp. We are in Patchway, Kadoma.</p>
+<div class="actions"><a class="btn" href="https://wa.me/263718751792?text=Hello%20Genmash%20distributors" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+</div>
+<dl class="facts">
+<div><dt>Phone and WhatsApp (quotes)</dt><dd><a href="tel:+263718751792">+263 71 875 1792</a></dd></div>
+<div><dt>Other numbers</dt><dd><a href="tel:+263786077652">0786077652</a>, <a href="tel:+263775204255">0775204255</a></dd></div>
+<div><dt>Email</dt><dd><a href="mailto:sales@genmashy.co.zw">sales@genmashy.co.zw</a><br><a href="mailto:nyakupindazvikomborero8@gmail.com">nyakupindazvikomborero8@gmail.com</a></dd></div>
+<div><dt>Address</dt><dd>Patchway, Kadoma</dd></div>
+</dl>
 </div></section>
 </main>
-<footer><div class="wrap">&copy; Genmash distributors. Patchway, Kadoma.</div></footer>
-
 <script>
 var S=[
-{k:"solar",n:"Solar installation",c:"#020a2b",d:"We size the system to your load, supply the kit and install it.",i:["Site visit and load assessment","Panels, inverter and battery supply","Mounting, wiring and testing","Handover and how-to-use guide"]},
-{k:"star",n:"Starlink installation",c:"#1d4ed8",d:"Clear-sky mounting and a clean setup, ready to use.",i:["Starlink kit supply","Clear-view site check","Mounting and cabling","Router setup and testing"]},
-{k:"health",n:"Solar health check",c:"#0a2a78",d:"A full check of your existing solar system: panels, inverter, batteries and wiring, so faults are found and fixed early.",i:["Panel and cleanliness inspection","Battery and inverter performance test","Wiring and connection check","Report and fixes for any faults"]},
-{k:"wifi",n:"WiFi and access points",c:"#0891b2",d:"Better signal in every room: extenders and access points supplied, set up and configured.",i:["Signal and dead-spot check","Extender supply","Placement and setup","Access point configuration","Speed test after installation"]},
-{k:"elec",n:"Electric tubing",c:"#4f46e5",d:"Conduit and tubing for safe, tidy electrical wiring.",i:["Site check and layout","Conduit and tubing supply","Fitting and routing of tubing","Final inspection and tidy-up"]}];
+{k:"solar",n:"Solar installation",d:"We size the system to your load, supply the kit and install it.",i:["Site visit and load assessment","Panels, inverter and battery supply","Mounting, wiring and testing","Handover and how-to-use guide"]},
+{k:"star",n:"Starlink installation",d:"Clear-sky mounting and a clean setup, ready to use.",i:["Starlink kit supply","Clear-view site check","Mounting and cabling","Router setup and testing"]},
+{k:"health",n:"Solar health check",d:"A full check of your existing solar system: panels, inverter, batteries and wiring, so faults are found and fixed early.",i:["Panel and cleanliness inspection","Battery and inverter performance test","Wiring and connection check","Report and fixes for any faults"]},
+{k:"wifi",n:"WiFi and access points",d:"Better signal in every room: extenders and access points supplied, set up and configured.",i:["Signal and dead-spot check","Extender supply","Placement and setup","Access point configuration","Speed test after installation"]},
+{k:"elec",n:"Electric tubing",d:"Conduit and tubing for safe, tidy electrical wiring.",i:["Site check and layout","Conduit and tubing supply","Fitting and routing of tubing","Final inspection and tidy-up"]}];
 var counts={solar:0,star:0,health:0,wifi:0,elec:0},total=0,cur=0;
-try{var gs=JSON.parse(sessionStorage.getItem("gmc"));if(gs&&gs.counts){counts=gs.counts;total=gs.total||0}}catch(e){}window.gmState={counts:counts,total:total};
-var tabs=document.getElementById("tabs"),panel=document.getElementById("panel"),svc=document.getElementById("svc");
+try{var gs=JSON.parse(sessionStorage.getItem("gmc"));if(gs&&gs.counts){counts=gs.counts;total=gs.total||0}}catch(e){}
+window.gmState={counts:counts,total:total};
+var tabs=document.getElementById("tabs"),panel=document.getElementById("panel"),svc=document.getElementById("svc"),
+    note=document.getElementById("waNote"),empty=document.getElementById("empty"),list=document.getElementById("list");
 function show(i){cur=i;var s=S[i];
-document.getElementById("dash").style.setProperty("--c",s.c);
-Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j===i)});
-panel.innerHTML="<div><h3>"+s.n+"</h3><p>"+s.d+"</p></div><div><h3>Included</h3><ul>"+s.i.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul></div>";
+Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-pressed",j===i)});
+panel.innerHTML="<h3>"+s.n+"</h3><p>"+s.d+"</p><ul class=\"checks\">"+s.i.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>";
 svc.value=s.k}
-S.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.textContent=s.n;b.onclick=function(){show(i)};tabs.appendChild(b);
+S.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed","false");b.textContent=s.n;b.onclick=function(){show(i)};tabs.appendChild(b);
 var o=document.createElement("option");o.value=s.k;o.textContent=s.n;svc.appendChild(o)});
 svc.onchange=function(){show(S.findIndex(function(s){return s.k===svc.value}))};
 document.getElementById("form").onsubmit=function(e){e.preventDefault();
-var s=S[cur],li=document.createElement("li"),a=document.createElement("span"),b=document.createElement("span");
-a.textContent=document.getElementById("name").value;b.textContent=s.n+" | "+document.getElementById("phone").value;
-li.appendChild(a);li.appendChild(b);document.getElementById("list").prepend(li);
+var s=S[cur],nm=document.getElementById("name").value,ph=document.getElementById("phone").value,
+li=document.createElement("li"),a=document.createElement("span"),b=document.createElement("span");
+a.textContent=nm;b.textContent=s.n+" | "+ph;li.appendChild(a);li.appendChild(b);list.prepend(li);
 counts[s.k]++;total++;
-window.gmState={counts:counts,total:total};try{sessionStorage.setItem("gmc",JSON.stringify(window.gmState))}catch(e){}if(window.gmDash)window.gmDash();
-var msg="Hello Genmash distributors, I would like a quote.\nService: "+s.n+"\nName: "+a.textContent+"\nPhone: "+document.getElementById("phone").value;
+window.gmState={counts:counts,total:total};try{sessionStorage.setItem("gmc",JSON.stringify(window.gmState))}catch(x){}
+if(window.gmDash)window.gmDash();
+var msg="Hello Genmash distributors, I would like a quote.\nService: "+s.n+"\nName: "+nm+"\nPhone: "+ph;
 var url="https://wa.me/263718751792?text="+encodeURIComponent(msg);
-var note=document.getElementById("waNote");note.textContent="";
-note.appendChild(document.createTextNode("Your request is ready. "));
+note.textContent="";
+var p=document.createElement("p");p.textContent="Your request is ready. Open WhatsApp to send it.";
+var act=document.createElement("div");act.className="actions";
 var l=document.createElement("a");l.className="btn";l.href=url;l.target="_blank";l.rel="noopener";l.textContent="Open WhatsApp";
-var l2=document.createElement("a");l2.href="whatsapp://send?phone=263718751792&text="+encodeURIComponent(msg);l2.style.marginLeft="14px";l2.textContent="or open in the WhatsApp app";
-note.appendChild(l);note.appendChild(l2);
-var hint=document.createElement("div");hint.style.marginTop="14px";hint.textContent="If the buttons do not open, copy this message and send it on WhatsApp to +263 71 875 1792:";
-var box=document.createElement("div");box.style.cssText="margin-top:8px;white-space:pre-wrap;background:var(--bg);color:var(--ink);padding:12px;border-radius:8px";box.textContent=msg;
-note.appendChild(hint);note.appendChild(box);note.style.display="block";
-document.getElementById("empty").style.display="none";e.target.reset();svc.value=s.k};
-var cards=Array.prototype.slice.call(document.querySelectorAll("#svcGrid .card")),per=2,pages=Math.ceil(cards.length/per),pgN=0;
-function showPage(n){pgN=n;cards.forEach(function(c,i){c.hidden=Math.floor(i/per)!==n});document.getElementById("pg").textContent="Page "+(n+1)+" of "+pages;document.getElementById("prev").disabled=n===0;document.getElementById("next").disabled=n===pages-1}
-document.getElementById("prev").onclick=function(){if(pgN>0)showPage(pgN-1)};
-document.getElementById("next").onclick=function(){if(pgN<pages-1)showPage(pgN+1)};
-showPage(0);
+var l2=document.createElement("a");l2.href="whatsapp://send?phone=263718751792&text="+encodeURIComponent(msg);l2.textContent="or open in the WhatsApp app";
+act.appendChild(l);act.appendChild(l2);
+var hint=document.createElement("p");hint.className="hint";hint.textContent="If the buttons do not open, copy this message and send it on WhatsApp to +263 71 875 1792:";
+var box=document.createElement("pre");box.className="msg";box.textContent=msg;
+note.appendChild(p);note.appendChild(act);note.appendChild(hint);note.appendChild(box);
+note.hidden=false;empty.hidden=true;e.target.reset();svc.value=s.k};
 show(0);
 </script>
+<footer class="site-footer"><div class="wrap"><span>&copy; Genmash distributors</span><span>Patchway, Kadoma</span></div></footer>
 </body>
 </html>
