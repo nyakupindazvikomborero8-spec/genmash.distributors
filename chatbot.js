@@ -167,8 +167,54 @@
   link.href = (script && script.src ? script.src.replace(/chatbot\.js.*$/, "") : "") + "chatbot.css";
   link.onload = link.onerror = build; document.head.appendChild(link);
 })();
+/* ===== Gooey cursor blobs ===== */
+(function () {
+  "use strict";
+  
+  var SETTINGS = { radiusA: 45, radiusB: 20, easeA: 0.15, easeB: 0.12, blur: 10, goo: 20, wobble: 4 };
 
-/* ===== Gooey cursor blobs (added at end of chatbot.js) ===== */
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (window.matchMedia("(pointer: coarse)").matches) return;
+
+  var style = document.createElement("style");
+  style.textContent =
+    ".gm-blobs{position:fixed;inset:0;width:100%;height:100%;z-index:9999;pointer-events:none;mix-blend-mode:screen;opacity:0;transition:opacity .4s ease}" +
+    ".gm-blobs.is-on{opacity:0.6}.gm-blobs circle{fill:#5b87ff}";
+  document.head.appendChild(style);
+
+  var holder = document.createElement("div");
+  holder.innerHTML =
+    '<svg class="gm-blobs" aria-hidden="true" focusable="false"><defs>' +
+    '<filter id="gm-goo" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">' +
+    '<feGaussianBlur in="SourceGraphic" stdDeviation="' + SETTINGS.blur + '" result="blur"/>' +
+    '<feColorMatrix in="blur" mode="matrix" result="goo" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 ' + SETTINGS.goo + ' -9"/>' +
+    '<feComposite in="SourceGraphic" in2="goo" operator="atop"/></filter></defs>' +
+    '<g filter="url(#gm-goo)"><circle r="' + SETTINGS.radiusA + '"/><circle r="' + SETTINGS.radiusB + '"/></g></svg>';
+  var svg = holder.firstChild, dots = svg.querySelectorAll("circle"), big = dots[0], small = dots[1];
+  document.body.appendChild(svg);
+
+  var tx = innerWidth / 2, ty = innerHeight / 2, ax = tx, ay = ty, bx = tx, by = ty, seen = false;
+  
+  function track(e) { 
+    tx = e.clientX; ty = e.clientY; 
+    if (!seen) { seen = true; svg.classList.add("is-on"); } 
+  }
+  
+  addEventListener("pointermove", track, { passive: true });
+  addEventListener("pointerdown", track, { passive: true });
+
+  var t0 = performance.now();
+  (function frame(now) {
+    var t = now - t0;
+    ax += (tx - ax) * SETTINGS.easeA; ay += (ty - ay) * SETTINGS.easeA;
+    bx += (ax + Math.cos(t / 900) * SETTINGS.wobble - bx) * SETTINGS.easeB;
+    by += (ay + Math.sin(t / 1150) * SETTINGS.wobble - by) * SETTINGS.easeB;
+    big.setAttribute("cx", ax.toFixed(1)); big.setAttribute("cy", ay.toFixed(1));
+    small.setAttribute("cx", bx.toFixed(1)); small.setAttribute("cy", by.toFixed(1));
+    requestAnimationFrame(frame);
+  })(t0);
+})();
+
 (function () {
   "use strict";
   
