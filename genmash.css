@@ -181,3 +181,8 @@ input:focus-visible,select:focus-visible{outline-offset:0}
 
 /* Footer */
 .site-footer{padding-block:8px 28px;color:#dbe6ff;font-size:.875rem}
+
+/* gm-products-css */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:start}
+.prod-grid h3{margin-top:0}
+#about .lead{max-width:48rem}
