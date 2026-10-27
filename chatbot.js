@@ -1,12 +1,12 @@
-/* Genmash chat assistant. Add <script src="chatbot.js" defer></script> to each page.
+/* Genmashy chat assistant. Add <script src="chatbot.js" defer></script> to each page.
    Edit section 1 (details) and section 2 (answers) to change what the bot says. */
 (function () {
   "use strict";
 
   /* ===== 1. YOUR DETAILS ===== */
   var C = {
-    wa: "263718751792", phone: "+263718751792", phoneShow: "+263 71 875 1792",
-    other: "0786077652, 0775204255", email: "sales@genmashy.co.zw", place: "Patchway, Kadoma"
+    wa: "263718751792", phone: "+263718751792", phoneShow: "+263 718 751 792",
+    other: "+263 774 222 393, +263 785 622 754", email: "sales@genmashy.co.zw", place: "63 Mendel Road, Avondale, Harare"
   };
   var SERVICES = [["solar", "Solar installation"], ["health", "Solar health check"], ["starlink", "Starlink installation"], ["wifi", "WiFi and access points"], ["electric", "Electric tubing"]];
 
@@ -15,7 +15,7 @@
   var TOPICS = {
     hello: { words: ["hi", "hello", "hey", "morning", "afternoon"], text: "Hello! How can I help?" },
     thanks: { words: ["thanks", "thank", "cheers"], text: "You're welcome! Anything else I can help with?" },
-    about: { words: ["about", "company", "who are", "genmash"], text: "Genmash distributors is a small, local company in " + C.place + ". We supply and install solar systems, Starlink, WiFi and electric tubing, and we work to leave every client fully satisfied." },
+    about: { words: ["about", "company", "who are", "genmash"], text: "Genmashy distributors is a small, local company in " + C.place + ". We supply and install solar systems, Starlink, WiFi and electric tubing, and we work to leave every client fully satisfied." },
     services: { words: ["services", "service", "offer", "what do you do", "products"], text: "We supply and install:\n- Solar systems and solar health checks\n- Starlink\n- WiFi extenders and access points\n- Electric tubing\n\nPick one to learn more.", chips: [["Solar", "topic:solar"], ["Solar health check", "topic:health"], ["Starlink", "topic:starlink"], ["WiFi", "topic:wifi"], ["Electric tubing", "topic:electric"]] },
     solar: { words: ["solar", "panel", "inverter", "battery", "batteries", "backup", "load shedding", "power"], text: "We size a solar system to your load, supply the panels, inverter and battery, then mount, wire and test it. You get a how-to-use guide at handover.", chips: REQ("solar") },
     health: { words: ["health", "health check", "fault", "faulty", "not charging", "inspect"], text: "Our solar health check inspects your existing system (panels, inverter, batteries and wiring), tests performance and fixes any faults found.", chips: REQ("health") },
@@ -27,7 +27,7 @@
     hours: { words: ["hours", "open", "opening", "close", "closing", "time"], text: "I don't have our opening hours here. Message or call the team to confirm a good time.", chips: [["Talk to the team", "team"]] },
     contact: { words: ["phone", "call", "number", "email", "whatsapp", "contact"], text: "You can reach us on " + C.phoneShow + " (phone and WhatsApp), or " + C.other + ", or by email at " + C.email + ".", links: [["Chat on WhatsApp", "https://wa.me/" + C.wa, 1], ["Call us", "tel:" + C.phone], ["Email us", "mailto:" + C.email]] }
   };
-  var MENU = [["Our services", "topic:services"], ["Request a job", "request"], ["Contact details", "topic:contact"], ["About Genmash", "topic:about"], ["Talk to the team", "team"]];
+  var MENU = [["Our services", "topic:services"], ["Request a job", "request"], ["Contact details", "topic:contact"], ["About Genmashy", "topic:about"], ["Talk to the team", "team"]];
   var CANCEL = [["Cancel", "cancel"]];
 
   /* ===== 3. THE CHAT ENGINE (you can leave this alone) ===== */
@@ -86,7 +86,7 @@
   }
   function topic(id) { var o = TOPICS[id]; say(o.text, o.links, o.chips || [["Back to menu", "menu"]]); }
   function team() {
-    var msg = "Hello Genmash distributors, I was chatting on your website and would like help from the team." + (lastQ ? "\nMy question: " + lastQ : "");
+    var msg = "Hello Genmashy distributors, I was chatting on your website and would like help from the team." + (lastQ ? "\nMy question: " + lastQ : "");
     say("Our team will be glad to help. WhatsApp is the fastest way to reach them.", [["Message the team on WhatsApp", "https://wa.me/" + C.wa + "?text=" + encodeURIComponent(msg), 1], ["Call " + C.phoneShow, "tel:" + C.phone], ["Email us", "mailto:" + C.email]], [["Back to menu", "menu"]]);
   }
   function svcName(text) {
@@ -114,7 +114,7 @@
     } else if (f.step === "details") { f.d.details = v.slice(0, 300); finish(); }
   }
   function finish() {
-    var d = flow.d, msg = "Hello Genmash distributors, I would like help.\nService: " + d.service + "\nName: " + d.name + "\nPhone: " + d.phone + (d.details ? "\nDetails: " + d.details : "") + "\n(Sent from the website chat)";
+    var d = flow.d, msg = "Hello Genmashy distributors, I would like help.\nService: " + d.service + "\nName: " + d.name + "\nPhone: " + d.phone + (d.details ? "\nDetails: " + d.details : "") + "\n(Sent from the website chat)";
     flow = null;
     say("Thank you, " + d.name.split(" ")[0] + ". Your request is ready. Tap the button to send it to our team on WhatsApp. Nothing is sent until you do.", [["Send on WhatsApp", "https://wa.me/" + C.wa + "?text=" + encodeURIComponent(msg), 1], ["Call us instead", "tel:" + C.phone]], [["Back to menu", "menu"]]);
   }
@@ -144,15 +144,15 @@
     st.open = open; save();
     el.box.hidden = !open; el.btn.setAttribute("aria-expanded", open);
     document.body.classList.toggle("gm-open", open);
-    if (open) { el.input.focus(); if (!el.started) { el.started = true; if (st.msgs.length) { st.msgs.forEach(function (m) { addMsg(m[0], m[1], m[2], true); }); showChips(MENU); } else say("Hi, I'm the Genmash assistant. I can answer questions about our services, help you request a job, or connect you with our team.", null, MENU); } }
+    if (open) { el.input.focus(); if (!el.started) { el.started = true; if (st.msgs.length) { st.msgs.forEach(function (m) { addMsg(m[0], m[1], m[2], true); }); showChips(MENU); } else say("Hi, I'm the Genmashy assistant. I can answer questions about our services, help you request a job, or connect you with our team.", null, MENU); } }
     else el.btn.focus();
   }
   function build() {
     el.btn = $("button", "gm-launch");
     el.btn.type = "button"; el.btn.setAttribute("aria-controls", "gm-box"); el.btn.setAttribute("aria-expanded", "false");
     el.btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.9A8 8 0 1 1 21 12z"/></svg><span>Need help?</span>';
-    el.box = $("section", "gm-box"); el.box.id = "gm-box"; el.box.hidden = true; el.box.setAttribute("aria-label", "Genmash chat assistant");
-    el.box.innerHTML = '<div class="gm-head"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 2 4.5 13.5h6L9.5 22l10-12.5h-6.2z"/></svg><div><b>Genmash assistant</b><small>Instant answers, or we connect you to the team</small></div><button type="button">Close</button></div><div class="gm-log" role="log" aria-live="polite"></div><form class="gm-form"><input type="text" maxlength="300" placeholder="Type your message" aria-label="Your message" autocomplete="off"><button type="submit">Send</button></form>';
+    el.box = $("section", "gm-box"); el.box.id = "gm-box"; el.box.hidden = true; el.box.setAttribute("aria-label", "Genmashy chat assistant");
+    el.box.innerHTML = '<div class="gm-head"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 2 4.5 13.5h6L9.5 22l10-12.5h-6.2z"/></svg><div><b>Genmashy assistant</b><small>Instant answers, or we connect you to the team</small></div><button type="button">Close</button></div><div class="gm-log" role="log" aria-live="polite"></div><form class="gm-form"><input type="text" maxlength="300" placeholder="Type your message" aria-label="Your message" autocomplete="off"><button type="submit">Send</button></form>';
     el.log = el.box.querySelector(".gm-log"); el.input = el.box.querySelector("input");
     el.box.querySelector(".gm-head button").onclick = function () { setOpen(false); };
     el.box.querySelector("form").onsubmit = function (e) { e.preventDefault(); var v = el.input.value; el.input.value = ""; send(v); };

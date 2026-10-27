@@ -1,4 +1,4 @@
-/* Genmash chat assistant. Uses the colour variables from genmash.css */
+/* Genmashy chat assistant. Uses the colour variables from genmash.css */
 .site-footer{padding-bottom:84px}
 .gm-launch{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 24px 0 18px;border:0;border-radius:99px;background:#0b47b8;color:#fff;font:inherit;font-size:.8125rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 26px rgba(10,22,54,.4);cursor:pointer}
 .gm-launch:hover{filter:brightness(1.15)}
