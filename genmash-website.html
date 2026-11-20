@@ -23,11 +23,9 @@
 <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="links">&#9776;</button>
 <ul class="links" id="links">
 <li><a href="genmash-website.html" data-nav="home" class="on" aria-current="page">Home</a></li>
-<li><a href="genmash-website.html#about" data-nav="about">About</a></li>
-<li><a href="starlink.html">Starlink</a></li>
-<li><a href="solar.html">Solar</a></li>
-<li><a href="wifi.html">WiFi</a></li>
-<li><a href="electric.html">Electric</a></li>
+<li class="dd"><button type="button" class="dd-btn" data-nav="about" aria-expanded="false" aria-haspopup="true">About <span class="car" aria-hidden="true">&#9662;</span></button><ul class="sub"><li><a href="genmash-website.html#about">About us</a></li><li><a href="genmash-website.html#work">Our work</a></li><li><a href="genmash-website.html#quote">Request a quote</a></li></ul></li>
+<li class="dd"><button type="button" class="dd-btn" data-nav="services" aria-expanded="false" aria-haspopup="true">Services <span class="car" aria-hidden="true">&#9662;</span></button><ul class="sub"><li><a href="starlink.html">Starlink installation</a></li><li><a href="solar.html">Solar installation</a></li><li><a href="solar.html#health-check">Solar health check</a></li><li><a href="wifi.html">WiFi and access points</a></li><li><a href="electric.html">Electric tubing</a></li></ul></li>
+<li class="dd"><button type="button" class="dd-btn" data-nav="supply" aria-expanded="false" aria-haspopup="true">Supply <span class="car" aria-hidden="true">&#9662;</span></button><ul class="sub"><li><a href="genmash-website.html#supply">All equipment</a></li><li><a href="genmash-website.html#mechanical">Mechanical equipment</a></li><li><a href="genmash-website.html#electrical">Electrical and electronics</a></li><li><a href="genmash-website.html#also-supply">We also supply</a></li></ul></li>
 <li><a href="dashboard.html">Dashboard</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
@@ -87,7 +85,7 @@
  </div>
  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#0e1c52" d="M0 60C300 0 600 100 900 50s400-30 540 10V90H0z"/></svg>
 </section>
-<section class="gallery">
+<section class="gallery" id="work">
  <div class="wrap">
   <div class="eyebrow rv">Our work</div>
   <h2 class="rv">Equipment and installs</h2>
@@ -106,9 +104,9 @@
  <h2 class="rv">What we supply</h2>
  <p class="lead rv">Industrial and commercial equipment, local and imported.</p>
  <div class="cols">
-  <div class="col rv"><h3>Mechanical equipment</h3><ul><li>Gearbox</li><li>Ballmill equipment</li><li>Low to high discharge pumps</li><li>Bearings, all sizes and applications</li><li>General mechanical products, industrial and commercial</li><li>Conveyor belt</li></ul></div>
-  <div class="col rv" style="--d:.12s"><h3>Electrical and electronics equipment</h3><ul><li>Electric motors</li><li>HV and LV switch gears and panels</li><li>Security systems</li><li>PLC</li><li>Control circuits</li><li>General electrical products, industrial and commercial</li><li>VSD and VFD</li><li>Generators and service kits</li><li>Solar panels</li></ul></div>
-  <div class="col rv" style="--d:.24s"><h3>We also supply</h3><ul><li>Local and imported goods to satisfy your needs.</li><li>Fully insured company for shipping goods locally and international.</li><li>Lead time for goods and services within working 7 days on most goods.</li></ul></div>
+  <div class="col rv" id="mechanical"><h3>Mechanical equipment</h3><ul><li>Gearbox</li><li>Ballmill equipment</li><li>Low to high discharge pumps</li><li>Bearings, all sizes and applications</li><li>General mechanical products, industrial and commercial</li><li>Conveyor belt</li></ul></div>
+  <div class="col rv" id="electrical" style="--d:.12s"><h3>Electrical and electronics equipment</h3><ul><li>Electric motors</li><li>HV and LV switch gears and panels</li><li>Security systems</li><li>PLC</li><li>Control circuits</li><li>General electrical products, industrial and commercial</li><li>VSD and VFD</li><li>Generators and service kits</li><li>Solar panels</li></ul></div>
+  <div class="col rv" id="also-supply" style="--d:.24s"><h3>We also supply</h3><ul><li>Local and imported goods to satisfy your needs.</li><li>Fully insured company for shipping goods locally and international.</li><li>Lead time for goods and services within working 7 days on most goods.</li></ul></div>
  </div>
 </div></section>
 <section class="quoteband" id="quote">

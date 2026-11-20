@@ -44,11 +44,29 @@ nav.solid .bar{background:rgba(10,20,60,.92);box-shadow:0 10px 36px rgba(0,0,0,.
 .links a{display:block;padding:11px 13px;white-space:nowrap;border-radius:30px;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:.25s}
 .links a:hover{background:rgba(75,123,245,.25)}
 .links a.on{background:var(--accent);color:#fff}
+.dd-btn{display:flex;align-items:center;gap:6px;padding:11px 13px;white-space:nowrap;border:0;border-radius:30px;background:none;color:inherit;font:inherit;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.dd-btn:hover,.dd.open>.dd-btn{background:rgba(75,123,245,.25)}
+.dd-btn.on{background:var(--accent);color:#fff}
+.dd-btn .car{font-size:.7rem;transition:transform .25s}
+.dd.open>.dd-btn .car{transform:rotate(180deg)}
+.dd{position:relative}
+.sub{list-style:none;margin:0;padding:8px;position:absolute;top:calc(100% + 6px);left:0;min-width:250px;background:rgba(10,20,60,.97);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 44px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s;z-index:5}
+.sub::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px}
+.dd:hover>.sub,.dd.open>.sub,.dd:focus-within>.sub{opacity:1;visibility:visible;transform:none}
+.links .sub a{padding:10px 14px;border-radius:12px;font-size:.9rem;font-weight:500;letter-spacing:0;text-transform:none}
+.links .sub a[aria-current="page"]{background:rgba(75,123,245,.3)}
 .burger{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
 @media (max-width:1100px){
   .bar,nav.solid .bar{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(10,20,60,.97)}
   .links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:1;background:linear-gradient(165deg,#16296b,#0a1440);flex-direction:column;justify-content:center;align-items:stretch;gap:8px;padding:90px 26px 40px;transform:translateX(110%);transition:transform .4s ease;border-left:1px solid rgba(255,255,255,.15);box-shadow:-24px 0 60px rgba(0,0,0,.6);visibility:hidden}
+  .links{justify-content:flex-start;overflow-y:auto}
   .links.open{transform:none;visibility:visible}
+  .dd-btn{width:100%;justify-content:space-between;font-size:1rem;padding:14px 20px;color:#fff}
+  .sub{position:static;display:none;opacity:1;visibility:visible;transform:none;min-width:0;padding:0 0 4px 14px;background:none;border:0;box-shadow:none}
+  .sub::before{display:none}
+  .dd:hover>.sub,.dd:focus-within>.sub{display:none}
+  .dd.open>.sub{display:block}
+  .links .sub a{font-size:.95rem;padding:11px 18px;color:#dfe6ff}
   .links a{font-size:1rem;padding:14px 20px;color:#fff}
   .links a:hover{background:rgba(75,123,245,.35)}
   .burger{display:block;position:relative;z-index:3;border:1.5px solid rgba(255,255,255,.35);background:rgba(75,123,245,.3);border-radius:14px;padding:4px 13px;line-height:1.3}

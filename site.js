@@ -27,19 +27,29 @@ document.addEventListener("DOMContentLoaded", function () {
   var links = $("#links"), ov = $("#ov"), burger = $("#burger");
   function menu(o) {
     if (!links || !burger) return;
+    if (!o) closeDD();
     links.classList.toggle("open", o);
     if (ov) ov.classList.toggle("show", o);
     burger.innerHTML = o ? "&#10005;" : "&#9776;";
     burger.setAttribute("aria-expanded", o);
   }
+  function closeDD(except) { $$(".dd.open").forEach(function (d) { if (d !== except) { d.classList.remove("open"); d.querySelector(".dd-btn").setAttribute("aria-expanded", "false"); } }); }
+  $$(".dd-btn").forEach(function (b) {
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var d = b.parentElement, o = !d.classList.contains("open");
+      closeDD(d); d.classList.toggle("open", o); b.setAttribute("aria-expanded", o);
+    });
+  });
+  document.addEventListener("click", function () { closeDD(); });
   if (burger) burger.onclick = function () { menu(!links.classList.contains("open")); };
   if (ov) ov.onclick = function () { menu(false); };
   $$("#links a").forEach(function (a) { a.addEventListener("click", function () { menu(false); }); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") menu(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeDD(); menu(false); } });
 
   /* Scroll: progress bar, solid nav, home/about highlight, gallery parallax */
   var bar = $("#bar"), nav = $("#nav"), pars = $$("[data-par]");
-  var home = $('.links a[data-nav="home"]'), about = $('.links a[data-nav="about"]');
+  var home = $('.links a[data-nav="home"]'), about = $('.links [data-nav="about"]');
   var aboutEl = $("#about"), servEl = $("#services"), tick = false;
   function frame() {
     var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
