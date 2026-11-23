@@ -9,11 +9,14 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="genmash.css">
 <link rel="stylesheet" href="home.css">
 <script src="site.js"></script>
 <script src="chatbot.js" defer></script>
+<!-- API Client for backend integration -->
+<script src="/assets/api-client.js"></script>
+<meta name="csrf-token" content="">
 </head>
 <body>
 <div id="bar"></div>
@@ -120,17 +123,22 @@
     <div class="tabs" id="tabs" role="group" aria-label="Services"></div>
     <div class="panel" id="panel" aria-live="polite"></div>
    </div>
-   <div class="rv r">
-    <form class="card" id="form">
-     <div class="field"><label for="name">Your name</label><input id="name" required autocomplete="name"></div>
-     <div class="field"><label for="phone">Phone number</label><input id="phone" required inputmode="tel" autocomplete="tel"></div>
-     <div class="field"><label for="svc">Service</label><select id="svc"></select></div>
-     <button class="btn" type="submit">Send on WhatsApp</button>
-     <div class="note" id="waNote" hidden></div>
-    </form>
-    <p class="empty" id="empty">Requests you send from this device will be listed here.</p>
-    <ul class="sent" id="list"></ul>
-   </div>
+<div class="rv r">
+     <form class="card" id="form" data-api="/quotations" data-method="POST">
+      <div class="field"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" required inputmode="tel" autocomplete="tel"></div>
+      <div class="field"><label for="company">Company (optional)</label><input id="company" name="company" autocomplete="organization"></div>
+      <div class="field"><label for="address">Address (optional)</label><textarea id="address" name="address" rows="2"></textarea></div>
+      <div class="field"><label for="svc">Service</label><select id="svc" name="service"></select></div>
+      <div class="field"><label for="currency">Preferred Currency</label><select id="currency" name="currency"><option value="USD">USD ($)</option><option value="ZWG">ZWG (ZWG$)</option><option value="BOTH" selected>Both</option></select></div>
+      <div class="field"><label for="notes">Additional Details</label><textarea id="notes" name="notes" rows="3" placeholder="Any specific requirements, location details, or questions..."></textarea></div>
+      <button class="btn" type="submit">Submit Quotation Request</button>
+      <div class="note" id="waNote" hidden></div>
+     </form>
+     <p class="empty" id="empty">Your quotation requests will be listed here.</p>
+     <ul class="sent" id="list"></ul>
+    </div>
   </div>
  </div>
  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#071030" d="M0 60C300 0 600 100 900 50s400-30 540 10V90H0z"/></svg>

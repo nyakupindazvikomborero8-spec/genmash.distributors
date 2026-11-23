@@ -1,0 +1,61 @@
+{
+    "name": "genmashy/distributors",
+    "description": "Genmashy Distributors - Complete E-commerce Platform",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.3",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-gd": "*",
+        "ext-fileinfo": "*",
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Core\\": "src/Core/",
+            "Models\\": "src/Models/",
+            "Services\\": "src/Services/",
+            "Controllers\\": "src/Controllers/",
+            "Middleware\\": "src/Middleware/"
+        },
+        "files": [
+            "bootstrap/app.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"copy('.env.example', '.env');\""
+        ],
+        "migrate": "php migrate.php",
+        "seed": "php seed.php",
+        "serve": "php -S localhost:8000 -t public",
+        "test": "phpunit",
+        "cs-check": "phpcs --standard=PSR12 src/",
+        "cs-fix": "phpcbf --standard=PSR12 src/"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    }
+}
